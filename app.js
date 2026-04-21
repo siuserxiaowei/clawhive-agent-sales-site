@@ -3,7 +3,7 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
   const state = { selectedId: 'clawhive', query: '', category: 'all' };
-  const elevator = '个人龙虾很强，但企业直接让员工裸用，最大风险是权限、审计和合规失控。帝王蟹解决的问题只有一个：让企业敢让 AI 碰核心数据。它不绑 IM、不绑模型，能接钉钉、飞书、企微和自建 IM，支持本地专属部署，把分散 Agent 统一纳入管控。';
+  const elevator = data.elevator || '';
 
   function escapeHtml(text) {
     return String(text).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
@@ -46,6 +46,88 @@
     const toast = $('#toast');
     toast.classList.add('show');
     window.setTimeout(() => toast.classList.remove('show'), 1400);
+  }
+
+  function renderPitch() {
+    const el = $('#pitchBlock');
+    if (el) el.textContent = elevator;
+  }
+  function renderNumbers() {
+    const grid = $('#numbersGrid');
+    if (!grid || !data.numbers) return;
+    grid.innerHTML = data.numbers.map(item => `
+      <article class="number-card">
+        <div class="number-big">${escapeHtml(item.n)}</div>
+        <div class="number-label">${escapeHtml(item.label)}</div>
+        <p class="number-fact">${escapeHtml(item.v)}</p>
+        <p class="number-use"><strong>用法</strong>${escapeHtml(item.u)}</p>
+      </article>
+    `).join('');
+  }
+  function renderLineage() {
+    const grid = $('#lineageGrid');
+    if (!grid || !data.lineage) return;
+    const left = data.lineage.openclaw, right = data.lineage.clawhive;
+    grid.innerHTML = [
+      { ...left, side: 'left' },
+      { ...right, side: 'right' }
+    ].map(card => `
+      <article class="lineage-card lineage-${card.side}">
+        <div class="lineage-head"><span class="lineage-icon">${escapeHtml(card.icon)}</span>
+          <div><h3>${escapeHtml(card.title)}</h3><p class="lineage-sub">${escapeHtml(card.subtitle)}</p></div></div>
+        <p class="lineage-row"><strong>起源</strong>${escapeHtml(card.story)}</p>
+        <p class="lineage-row"><strong>真本事</strong>${escapeHtml(card.ability)}</p>
+        <p class="lineage-row"><strong>${card.side === 'left' ? '企业级缺陷' : '解决方式'}</strong>${escapeHtml(card.limit)}</p>
+      </article>
+    `).join('');
+  }
+  function renderIncidents() {
+    const grid = $('#incidentGrid');
+    if (!grid || !data.incidents) return;
+    grid.innerHTML = data.incidents.map(it => `
+      <article class="incident-card">
+        <div class="incident-icon">${escapeHtml(it.icon)}</div>
+        <h3>${escapeHtml(it.title)}</h3>
+        <p class="incident-body">${escapeHtml(it.body)}</p>
+        <p class="incident-imp"><strong>对销售的意义</strong>${escapeHtml(it.implication)}</p>
+      </article>
+    `).join('');
+  }
+  function renderPersona() {
+    const wrap = $('#personaList');
+    if (!wrap || !data.personaTree) return;
+    wrap.innerHTML = data.personaTree.map((q, idx) => `
+      <article class="persona-card">
+        <div class="persona-q"><span class="persona-num">问题 ${idx + 1}</span><h3>${escapeHtml(q.q)}</h3></div>
+        <ul class="persona-branches">
+          ${q.branches.map(b => `
+            <li class="${b.highlight ? 'is-highlight' : ''}">
+              <span class="branch-label">${escapeHtml(b.label)}</span>
+              <span class="branch-arrow">→</span>
+              <span class="branch-advice">${escapeHtml(b.advice)}</span>
+            </li>
+          `).join('')}
+        </ul>
+      </article>
+    `).join('');
+  }
+  function renderDecision() {
+    const grid = $('#decisionGrid');
+    if (!grid || !data.decisionGuide) return;
+    grid.innerHTML = data.decisionGuide.map(d => `
+      <article class="decision-card">
+        <div class="decision-tag">${escapeHtml(d.scenario)}</div>
+        <p class="decision-need"><strong>核心需求</strong>${escapeHtml(d.need)}</p>
+        <p class="decision-pick"><strong>推荐</strong><span class="pick-text">${escapeHtml(d.pick)}</span></p>
+        <p class="decision-why">${escapeHtml(d.why)}</p>
+      </article>
+    `).join('');
+  }
+  function renderFactsTable() {
+    const t = $('#factsTable');
+    if (!t || !data.factSheet) return;
+    t.innerHTML = `<thead><tr><th>事实</th><th>数据</th><th>出处</th></tr></thead>` +
+      `<tbody>${data.factSheet.map(f => `<tr><td>${escapeHtml(f.k)}</td><td>${escapeHtml(f.v)}</td><td>${escapeHtml(f.src)}</td></tr>`).join('')}</tbody>`;
   }
 
   function renderFacts() {
@@ -125,9 +207,21 @@
   function bind() {
     $('#searchInput').addEventListener('input', e => { state.query = e.target.value; renderList(); renderCard(); });
     $('#categoryFilter').addEventListener('change', e => { state.category = e.target.value; renderList(); renderCard(); });
-    $('#copyElevator').addEventListener('click', () => copy(elevator));
+    const btnElev = $('#copyElevator');
+    if (btnElev) btnElev.addEventListener('click', () => copy(elevator));
+    const btnElev2 = $('#copyElevatorBlock');
+    if (btnElev2) btnElev2.addEventListener('click', () => copy(elevator));
     $('#copyAllObjections').addEventListener('click', () => copy(data.objections.map(o => `Q：${o.q}\nA：${o.a}`).join('\n\n')));
     $('#toggleMap').addEventListener('click', () => $('#mapWrap').classList.toggle('is-collapsed'));
+    const btnFacts = $('#copyFactSheet');
+    if (btnFacts) btnFacts.addEventListener('click', () => {
+      const text = data.factSheet.map(f => `${f.k}：${f.v}（出处：${f.src}）`).join('\n');
+      copy(text);
+    });
   }
-  renderFacts(); renderCategories(); renderList(); renderCard(); renderMatrix(); renderMaturity(); renderObjections(); bind();
+
+  renderPitch(); renderNumbers(); renderFacts(); renderCategories();
+  renderLineage(); renderIncidents(); renderPersona(); renderDecision(); renderFactsTable();
+  renderList(); renderCard(); renderMatrix(); renderMaturity(); renderObjections();
+  bind();
 })();
