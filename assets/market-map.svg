@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" font-family="'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif">
+  <!-- Background -->
+  <rect width="1000" height="720" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="500" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#1A1A1A">2026 企业级 AI Agent 市场定位地图</text>
+  <text x="500" y="62" text-anchor="middle" font-size="13" fill="#6B6B6B">国内主要玩家按「生态策略」与「产品定位」二维分布</text>
+
+  <!-- Chart area -->
+  <g transform="translate(110, 100)">
+    <!-- Quadrant backgrounds (very subtle) -->
+    <rect x="0" y="0" width="390" height="260" fill="#EEF2F7" opacity="0.5"/>
+    <rect x="390" y="0" width="390" height="260" fill="#FFF4E6" opacity="0.6"/>
+    <rect x="0" y="260" width="390" height="260" fill="#F5F5F5" opacity="0.5"/>
+    <rect x="390" y="260" width="390" height="260" fill="#F0F7F0" opacity="0.5"/>
+
+    <!-- Quadrant labels (corners) -->
+    <text x="15" y="22" font-size="11" fill="#8896A6" font-weight="600">① 生态绑定型 · 企业管理</text>
+    <text x="765" y="22" text-anchor="end" font-size="11" fill="#D48806" font-weight="600">② 中立开放型 · 企业管理</text>
+    <text x="15" y="512" font-size="11" fill="#8896A6" font-weight="600">③ 生态绑定型 · 个人/开发者</text>
+    <text x="765" y="512" text-anchor="end" font-size="11" fill="#52A852" font-weight="600">④ 中立开放型 · 个人/开源</text>
+
+    <!-- Axes -->
+    <line x1="0" y1="260" x2="780" y2="260" stroke="#33333322" stroke-width="1.5"/>
+    <line x1="390" y1="0" x2="390" y2="520" stroke="#33333322" stroke-width="1.5"/>
+
+    <!-- Axis arrows and labels -->
+    <line x1="0" y1="260" x2="0" y2="260" stroke="#333" stroke-width="0"/>
+    <text x="-8" y="12" text-anchor="end" font-size="12" fill="#444" font-weight="600">↑ 企业管理中枢</text>
+    <text x="-8" y="516" text-anchor="end" font-size="12" fill="#444" font-weight="600">↓ 个人/执行工具</text>
+    <text x="4" y="540" font-size="12" fill="#444" font-weight="600">← 绑定自家生态</text>
+    <text x="776" y="540" text-anchor="end" font-size="12" fill="#444" font-weight="600">生态中立 →</text>
+
+    <!-- =========================================
+         Q1: 生态绑定 + 企业管理（左上）
+         ========================================= -->
+
+    <!-- 钉钉 AI 助理 -->
+    <g transform="translate(95, 80)">
+      <rect x="-55" y="-22" width="110" height="44" rx="6" fill="#E6F0FD" stroke="#1976D2" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#0D47A1">钉钉 AI 助理</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#1565C0">阿里 · 通义千问</text>
+    </g>
+
+    <!-- 飞书 aily / 智能伙伴 -->
+    <g transform="translate(235, 135)">
+      <rect x="-58" y="-22" width="116" height="44" rx="6" fill="#E6F0FD" stroke="#1976D2" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#0D47A1">飞书 aily</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#1565C0">字节 · 豆包</text>
+    </g>
+
+    <!-- 企业微信 + WorkBuddy -->
+    <g transform="translate(110, 175)">
+      <rect x="-65" y="-22" width="130" height="44" rx="6" fill="#E6F0FD" stroke="#1976D2" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#0D47A1">企业微信 / WorkBuddy</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#1565C0">腾讯 · 混元 + 外部模型</text>
+    </g>
+
+    <!-- 百度千帆 AppBuilder -->
+    <g transform="translate(260, 215)">
+      <rect x="-65" y="-22" width="130" height="44" rx="6" fill="#E6F0FD" stroke="#1976D2" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#0D47A1">百度千帆 AppBuilder</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#1565C0">文心一言 · 开发平台</text>
+    </g>
+
+    <!-- =========================================
+         Q2: 生态中立 + 企业管理（右上）【重点】
+         ========================================= -->
+
+    <!-- 帝王蟹 ClawHive - HIGHLIGHTED -->
+    <g transform="translate(555, 110)">
+      <!-- Glow -->
+      <rect x="-80" y="-32" width="160" height="64" rx="10" fill="#FFE4C4" opacity="0.7"/>
+      <rect x="-75" y="-27" width="150" height="54" rx="8" fill="#FF6B35" stroke="#D84315" stroke-width="2"/>
+      <text x="0" y="-9" text-anchor="middle" font-size="15" font-weight="800" fill="#FFFFFF">🦀 帝王蟹 ClawHive</text>
+      <text x="0" y="8" text-anchor="middle" font-size="10" font-weight="600" fill="#FFF3E0">网易智企 · 管控中枢</text>
+      <text x="0" y="22" text-anchor="middle" font-size="9" fill="#FFECB3">对接钉钉/飞书/企微</text>
+    </g>
+
+    <!-- 实在 Agent -->
+    <g transform="translate(620, 190)">
+      <rect x="-55" y="-22" width="110" height="44" rx="6" fill="#FFF8E1" stroke="#F57C00" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#E65100">实在 Agent</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#EF6C00">视觉+大模型 RPA</text>
+    </g>
+
+    <!-- 蚂蚁 Agentar -->
+    <g transform="translate(475, 210)">
+      <rect x="-50" y="-22" width="100" height="44" rx="6" fill="#FFF8E1" stroke="#F57C00" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#E65100">蚂蚁 Agentar</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#EF6C00">金融行业深耕</text>
+    </g>
+
+    <!-- 明略 DeepMiner -->
+    <g transform="translate(720, 150)">
+      <rect x="-52" y="-22" width="104" height="44" rx="6" fill="#FFF8E1" stroke="#F57C00" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#E65100">明略 DeepMiner</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#EF6C00">可信·全透明审计</text>
+    </g>
+
+    <!-- BetterYeah AI -->
+    <g transform="translate(710, 235)">
+      <rect x="-55" y="-22" width="110" height="44" rx="6" fill="#FFF8E1" stroke="#F57C00" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#E65100">BetterYeah AI</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#EF6C00">多Agent编排</text>
+    </g>
+
+    <!-- =========================================
+         Q3: 生态绑定 + 个人工具（左下）
+         ========================================= -->
+
+    <!-- WPS 灵犀 -->
+    <g transform="translate(150, 345)">
+      <rect x="-52" y="-22" width="104" height="44" rx="6" fill="#F5F5F5" stroke="#757575" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#424242">WPS 灵犀</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#616161">金山 · Office</text>
+    </g>
+
+    <!-- 扣子 Coze -->
+    <g transform="translate(290, 380)">
+      <rect x="-48" y="-22" width="96" height="44" rx="6" fill="#F5F5F5" stroke="#757575" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#424242">扣子 Coze</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#616161">字节 · 开发者</text>
+    </g>
+
+    <!-- 腾讯元器 -->
+    <g transform="translate(135, 440)">
+      <rect x="-48" y="-22" width="96" height="44" rx="6" fill="#F5F5F5" stroke="#757575" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#424242">腾讯元器</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#616161">零代码智能体</text>
+    </g>
+
+    <!-- =========================================
+         Q4: 生态中立 + 个人/开源（右下）
+         ========================================= -->
+
+    <!-- OpenClaw (龙虾) - 开源基座 -->
+    <g transform="translate(570, 345)">
+      <rect x="-70" y="-22" width="140" height="44" rx="6" fill="#E8F5E9" stroke="#388E3C" stroke-width="1.5"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#1B5E20">🦞 OpenClaw</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#2E7D32">开源龙虾 · 34万★</text>
+    </g>
+
+    <!-- ArkClaw -->
+    <g transform="translate(705, 385)">
+      <rect x="-50" y="-22" width="100" height="44" rx="6" fill="#E8F5E9" stroke="#388E3C" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#1B5E20">ArkClaw</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#2E7D32">字节 · 云端SaaS</text>
+    </g>
+
+    <!-- AutoClaw (澳龙) -->
+    <g transform="translate(460, 430)">
+      <rect x="-55" y="-22" width="110" height="44" rx="6" fill="#E8F5E9" stroke="#388E3C" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#1B5E20">AutoClaw 澳龙</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#2E7D32">智谱 · 本地一键装</text>
+    </g>
+
+    <!-- Dify -->
+    <g transform="translate(615, 455)">
+      <rect x="-42" y="-22" width="84" height="44" rx="6" fill="#E8F5E9" stroke="#388E3C" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#1B5E20">Dify</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#2E7D32">开源开发平台</text>
+    </g>
+
+    <!-- MiniMax MaxClaw -->
+    <g transform="translate(725, 460)">
+      <rect x="-52" y="-22" width="104" height="44" rx="6" fill="#E8F5E9" stroke="#388E3C" stroke-width="1.2"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="13" font-weight="700" fill="#1B5E20">MaxClaw</text>
+      <text x="0" y="13" text-anchor="middle" font-size="10" fill="#2E7D32">MiniMax · 智能体</text>
+    </g>
+  </g>
+
+  <!-- Legend (bottom) -->
+  <g transform="translate(110, 640)">
+    <text x="0" y="0" font-size="12" font-weight="700" fill="#333">图例：</text>
+
+    <rect x="50" y="-10" width="14" height="14" fill="#E6F0FD" stroke="#1976D2"/>
+    <text x="70" y="1" font-size="12" fill="#333">大厂办公生态（绑定）</text>
+
+    <rect x="225" y="-10" width="14" height="14" fill="#FFF8E1" stroke="#F57C00"/>
+    <text x="245" y="1" font-size="12" fill="#333">独立企业级平台</text>
+
+    <rect x="380" y="-10" width="14" height="14" fill="#E8F5E9" stroke="#388E3C"/>
+    <text x="400" y="1" font-size="12" fill="#333">OpenClaw 生态 / 开源</text>
+
+    <rect x="545" y="-10" width="14" height="14" fill="#FF6B35" stroke="#D84315"/>
+    <text x="565" y="1" font-size="12" fill="#333">🦀 本次重点（帝王蟹）</text>
+  </g>
+
+  <!-- Key insight box -->
+  <g transform="translate(110, 672)">
+    <rect x="0" y="0" width="780" height="36" rx="4" fill="#FFF9E6" stroke="#F0D58E" stroke-width="1"/>
+    <text x="14" y="15" font-size="11" font-weight="700" fill="#8B6914">核心洞察</text>
+    <text x="14" y="29" font-size="11" fill="#5F4B1E">帝王蟹是国内唯一在「企业管理」+「生态中立」象限占位的产品 —— 既不绑IM，也不绑大模型，可成为企业现有工作流的"上层管控中枢"。</text>
+  </g>
+</svg>
